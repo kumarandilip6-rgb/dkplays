@@ -1,9 +1,7 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,71 +10,56 @@
     <style>
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
-            font-family: Arial, sans-serif;
             background: #0b0b0f;
             color: white;
             min-height: 100vh;
         }
 
-        /* ================= HOME ================= */
+        /* =========================
+           HOME PAGE
+        ========================== */
 
         #homePage {
-            text-align: center;
+            min-height: 100vh;
         }
 
         header {
-            padding: 25px;
-            background: #15151c;
-            border-bottom: 2px solid #333;
+            width: 100%;
+            padding: 25px 50px;
+            background: #111116;
+            border-bottom: 1px solid #25252d;
+
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         header h1 {
             color: #00ff88;
-            font-size: 42px;
-            letter-spacing: 4px;
+            font-size: 32px;
+            letter-spacing: 2px;
         }
 
         header p {
-            color: #aaa;
-            margin-top: 8px;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .hero h2 {
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
-
-        .hero span {
-            color: #00ff88;
-        }
-
-        .hero p {
-            color: #aaa;
-            font-size: 18px;
+            color: #999;
+            flex: 1;
         }
 
         .login-button {
-            margin-top: 25px;
-            padding: 13px 30px;
-
             background: #00ff88;
             color: #000;
-
             border: none;
-            border-radius: 6px;
-
+            padding: 12px 25px;
+            border-radius: 8px;
             font-weight: bold;
+            font-size: 15px;
             cursor: pointer;
         }
 
@@ -84,8 +67,92 @@
             background: #00cc6a;
         }
 
+        /* =========================
+           HERO
+        ========================== */
 
-        /* ================= LOGIN PAGE ================= */
+        .hero {
+            min-height: 55vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            padding: 30px;
+        }
+
+        .hero h2 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 span {
+            color: #00ff88;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 20px;
+        }
+
+        /* =========================
+           CARDS
+        ========================== */
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            padding: 40px;
+        }
+
+        .card {
+            width: 250px;
+            padding: 30px;
+
+            background: #15151c;
+            border: 1px solid #292933;
+            border-radius: 15px;
+
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #00ff88;
+        }
+
+        .card h3 {
+            color: #00ff88;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+
+            color: #666;
+
+            border-top: 1px solid #222;
+        }
+
+        /* =========================
+           LOGIN / MESSAGE PAGES
+        ========================== */
 
         .page {
             display: none;
@@ -99,50 +166,61 @@
         }
 
         .box {
-            width: 380px;
-
-            padding: 40px;
+            width: 100%;
+            max-width: 450px;
 
             background: #15151c;
 
-            border: 1px solid #333;
-            border-radius: 12px;
+            padding: 40px;
 
-            text-align: center;
+            border-radius: 15px;
+
+            border: 1px solid #292933;
+
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.08);
         }
 
         .box h2 {
+            text-align: center;
+
             color: #00ff88;
+
             font-size: 32px;
-            letter-spacing: 3px;
 
             margin-bottom: 10px;
         }
 
-        .box p {
-            color: #888;
-            margin-bottom: 25px;
+        .box > p {
+            text-align: center;
+
+            color: #aaa;
+
+            margin-bottom: 30px;
         }
+
+        /* =========================
+           INPUTS
+        ========================== */
 
         input,
         textarea {
             width: 100%;
 
-            padding: 14px;
+            padding: 15px;
 
             margin-bottom: 15px;
 
-            background: #0b0b0f;
+            background: #0d0d12;
 
             color: white;
 
-            border: 1px solid #444;
+            border: 1px solid #333;
 
-            border-radius: 6px;
-
-            font-size: 15px;
+            border-radius: 8px;
 
             outline: none;
+
+            font-size: 15px;
         }
 
         input:focus,
@@ -151,14 +229,18 @@
         }
 
         textarea {
-            height: 140px;
+            min-height: 150px;
             resize: vertical;
         }
+
+        /* =========================
+           BUTTON
+        ========================== */
 
         .submit-button {
             width: 100%;
 
-            padding: 14px;
+            padding: 15px;
 
             background: #00ff88;
 
@@ -166,7 +248,9 @@
 
             border: none;
 
-            border-radius: 6px;
+            border-radius: 8px;
+
+            font-size: 16px;
 
             font-weight: bold;
 
@@ -177,8 +261,28 @@
             background: #00cc6a;
         }
 
+        /* =========================
+           LOGIN ERROR
+        ========================== */
+
+        #loginError {
+            color: #ff5555;
+
+            text-align: center;
+
+            margin-top: 15px;
+
+            min-height: 20px;
+        }
+
+        /* =========================
+           BACK BUTTON
+        ========================== */
+
         .back-button {
             display: block;
+
+            text-align: center;
 
             margin-top: 20px;
 
@@ -187,63 +291,38 @@
             cursor: pointer;
         }
 
-        #loginError {
-            color: #ff6666;
-            margin-top: 15px;
+        .back-button:hover {
+            text-decoration: underline;
         }
 
+        /* =========================
+           MOBILE
+        ========================== */
 
-        /* ================= CARDS ================= */
+        @media (max-width: 600px) {
 
-        .cards {
-            display: flex;
+            header {
+                padding: 20px;
+                flex-wrap: wrap;
+            }
 
-            justify-content: center;
+            header p {
+                width: 100%;
+                order: 3;
+            }
 
-            gap: 20px;
+            .hero h2 {
+                font-size: 38px;
+            }
 
-            flex-wrap: wrap;
+            .hero p {
+                font-size: 16px;
+            }
 
-            padding: 30px;
+            .box {
+                padding: 30px 20px;
+            }
 
-            text-align: center;
-        }
-
-        .card {
-            width: 250px;
-
-            padding: 30px 20px;
-
-            background: #15151c;
-
-            border: 1px solid #333;
-
-            border-radius: 10px;
-        }
-
-        .card h3 {
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            color: #aaa;
-
-            line-height: 1.5;
-        }
-
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            margin-top: 70px;
-
-            padding: 25px;
-
-            background: #15151c;
-
-            color: #777;
-
-            text-align: center;
         }
 
     </style>
@@ -254,9 +333,9 @@
 <body>
 
 
-    <!-- ================================================= -->
-    <!-- HOME PAGE -->
-    <!-- ================================================= -->
+    <!-- =========================
+         HOME PAGE
+    ========================== -->
 
     <div id="homePage">
 
@@ -264,7 +343,9 @@
 
             <h1>DKPLAYS</h1>
 
-            <p>Gaming • Entertainment • Fun</p>
+            <p>
+                Gaming • Entertainment • Fun
+            </p>
 
             <button
                 class="login-button"
@@ -284,7 +365,7 @@
             </h2>
 
             <p>
-                Welcome to DKPLAYS — your gaming world.
+                Your gaming world starts here.
             </p>
 
         </section>
@@ -294,7 +375,7 @@
 
             <div class="card">
 
-                <h3>🎮 Games</h3>
+                <h3>🎮 GAMES</h3>
 
                 <p>
                     Discover games and gaming content.
@@ -305,10 +386,10 @@
 
             <div class="card">
 
-                <h3>🔥 Videos</h3>
+                <h3>🎬 VIDEOS</h3>
 
                 <p>
-                    Watch gaming videos and highlights.
+                    Gaming videos, clips and entertainment.
                 </p>
 
             </div>
@@ -316,7 +397,7 @@
 
             <div class="card">
 
-                <h3>⚡ Updates</h3>
+                <h3>🔥 UPDATES</h3>
 
                 <p>
                     Stay updated with DKPLAYS.
@@ -337,25 +418,34 @@
 
 
 
-    <!-- ================================================= -->
-    <!-- PAGE 1 — USERNAME + PASSWORD -->
-    <!-- ================================================= -->
+    <!-- =========================
+         LOGIN PAGE
+    ========================== -->
 
-    <div id="loginPage" class="page">
+    <div
+        id="loginPage"
+        class="page">
 
         <div class="box">
 
-            <h2>DKPLAYS</h2>
+            <h2>
+                DKPLAYS
+            </h2>
 
-            <p>Login to continue</p>
+            <p>
+                Login to continue
+            </p>
 
 
-            <form onsubmit="checkLogin(event)">
+            <form
+                onsubmit="checkLogin(event)">
+
 
                 <input
                     type="text"
                     id="username"
                     placeholder="Username"
+                    autocomplete="username"
                     required
                 >
 
@@ -364,6 +454,7 @@
                     type="password"
                     id="password"
                     placeholder="Password"
+                    autocomplete="current-password"
                     required
                 >
 
@@ -375,6 +466,7 @@
                     LOGIN
 
                 </button>
+
 
             </form>
 
@@ -396,27 +488,33 @@
 
 
 
-    <!-- ================================================= -->
-    <!-- PAGE 2 — NAME + MESSAGE -->
-    <!-- ================================================= -->
+    <!-- =========================
+         NAME + MESSAGE PAGE
+    ========================== -->
 
-    <div id="messagePage" class="page">
+    <div
+        id="messagePage"
+        class="page">
 
         <div class="box">
 
-            <h2>DKPLAYS</h2>
+            <h2>
+                DKPLAYS
+            </h2>
 
-            <p>Send us your message</p>
+            <p>
+                Send us your message
+            </p>
 
 
-            <!-- FORMSPREE -->
+            <!--
+                YOUR REAL FORMSPREE ENDPOINT
+            -->
 
             <form
-                action="https://formspree.io/f/https://formspree.io/f/mbgljnpq"
+                action="https://formspree.io/f/mbgljnpq"
                 method="POST">
 
-
-                <!-- NAME -->
 
                 <input
                     type="text"
@@ -426,16 +524,12 @@
                 >
 
 
-                <!-- MESSAGE -->
-
                 <textarea
                     name="message"
                     placeholder="Enter your message"
                     required
                 ></textarea>
 
-
-                <!-- SEND -->
 
                 <button
                     type="submit"
@@ -444,6 +538,7 @@
                     SEND MESSAGE
 
                 </button>
+
 
             </form>
 
@@ -462,14 +557,11 @@
 
 
 
-    <!-- ================================================= -->
-    <!-- JAVASCRIPT -->
-    <!-- ================================================= -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
     <script>
-
-
-        /* OPEN LOGIN PAGE */
 
         function openLogin() {
 
@@ -482,26 +574,25 @@
         }
 
 
-        /* CHECK LOGIN */
-
         function checkLogin(event) {
 
             event.preventDefault();
 
 
             const username =
-                document.getElementById("username").value;
+                document.getElementById("username").value.trim();
+
 
             const password =
                 document.getElementById("password").value;
 
 
             /*
-             * DEMO LOGIN
-             *
-             * Change these values if you want
-             * a different demo username/password.
-             */
+                DEMO LOGIN
+
+                Username: admin
+                Password: 1234
+            */
 
             if (
                 username === "admin" &&
@@ -511,6 +602,8 @@
                 document.getElementById("loginPage").style.display = "none";
 
                 document.getElementById("messagePage").style.display = "flex";
+
+                document.getElementById("loginError").textContent = "";
 
             }
 
@@ -523,8 +616,6 @@
 
         }
 
-
-        /* RETURN HOME */
 
         function goHome() {
 
@@ -542,4 +633,3 @@
 </body>
 
 </html>
-```
