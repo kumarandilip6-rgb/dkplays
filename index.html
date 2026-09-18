@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,10 +21,14 @@
             font-family: Arial, sans-serif;
             background: #0b0b0f;
             color: white;
-            text-align: center;
+            min-height: 100vh;
         }
 
-        /* HEADER */
+        /* ================= HOME ================= */
+
+        #homePage {
+            text-align: center;
+        }
 
         header {
             padding: 25px;
@@ -32,9 +37,9 @@
         }
 
         header h1 {
+            color: #00ff88;
             font-size: 42px;
             letter-spacing: 4px;
-            color: #00ff88;
         }
 
         header p {
@@ -42,26 +47,8 @@
             margin-top: 8px;
         }
 
-        /* BUTTON */
-
-        .button {
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: #00ff88;
-            color: #000;
-            border: none;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .button:hover {
-            background: #00cc6a;
-        }
-
-        /* HOME */
-
         .hero {
+            text-align: center;
             padding: 100px 20px;
         }
 
@@ -70,64 +57,65 @@
             margin-bottom: 20px;
         }
 
-        .hero h2 span {
+        .hero span {
             color: #00ff88;
         }
 
         .hero p {
-            color: #bbb;
-            font-size: 19px;
-        }
-
-        /* CARDS */
-
-        .cards {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            padding: 30px;
-        }
-
-        .card {
-            width: 250px;
-            padding: 30px 20px;
-            background: #15151c;
-            border: 1px solid #333;
-            border-radius: 10px;
-        }
-
-        .card h3 {
-            margin-bottom: 12px;
-        }
-
-        .card p {
             color: #aaa;
-            line-height: 1.5;
+            font-size: 18px;
         }
 
-        /* LOGIN AND CONTACT PAGES */
+        .login-button {
+            margin-top: 25px;
+            padding: 13px 30px;
+
+            background: #00ff88;
+            color: #000;
+
+            border: none;
+            border-radius: 6px;
+
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background: #00cc6a;
+        }
+
+
+        /* ================= LOGIN PAGE ================= */
 
         .page {
             display: none;
+
             min-height: 100vh;
+
             justify-content: center;
             align-items: center;
+
             padding: 20px;
         }
 
         .box {
             width: 380px;
+
             padding: 40px;
+
             background: #15151c;
+
             border: 1px solid #333;
             border-radius: 12px;
+
+            text-align: center;
         }
 
         .box h2 {
             color: #00ff88;
             font-size: 32px;
             letter-spacing: 3px;
+
             margin-bottom: 10px;
         }
 
@@ -139,22 +127,22 @@
         input,
         textarea {
             width: 100%;
-            padding: 13px;
+
+            padding: 14px;
+
             margin-bottom: 15px;
 
             background: #0b0b0f;
+
             color: white;
 
-            border: 1px solid #333;
+            border: 1px solid #444;
+
             border-radius: 6px;
 
-            outline: none;
             font-size: 15px;
-        }
 
-        textarea {
-            height: 130px;
-            resize: vertical;
+            outline: none;
         }
 
         input:focus,
@@ -162,17 +150,26 @@
             border-color: #00ff88;
         }
 
+        textarea {
+            height: 140px;
+            resize: vertical;
+        }
+
         .submit-button {
             width: 100%;
-            padding: 13px;
+
+            padding: 14px;
 
             background: #00ff88;
+
             color: #000;
 
             border: none;
+
             border-radius: 6px;
 
             font-weight: bold;
+
             cursor: pointer;
         }
 
@@ -182,44 +179,71 @@
 
         .back-button {
             display: block;
+
             margin-top: 20px;
+
             color: #00ff88;
+
             cursor: pointer;
         }
 
-        #loginMessage {
+        #loginError {
+            color: #ff6666;
             margin-top: 15px;
+        }
+
+
+        /* ================= CARDS ================= */
+
+        .cards {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+            padding: 30px;
+
+            text-align: center;
+        }
+
+        .card {
+            width: 250px;
+
+            padding: 30px 20px;
+
+            background: #15151c;
+
+            border: 1px solid #333;
+
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
             color: #aaa;
+
+            line-height: 1.5;
         }
 
-        /* CONTACT BUTTON */
 
-        .contact-button {
-            margin-top: 20px;
-            padding: 12px 30px;
-
-            background: transparent;
-            color: #00ff88;
-
-            border: 1px solid #00ff88;
-            border-radius: 6px;
-
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .contact-button:hover {
-            background: #00ff88;
-            color: #000;
-        }
-
-        /* FOOTER */
+        /* ================= FOOTER ================= */
 
         footer {
             margin-top: 70px;
+
             padding: 25px;
+
             background: #15151c;
+
             color: #777;
+
+            text-align: center;
         }
 
     </style>
@@ -230,7 +254,9 @@
 <body>
 
 
-    <!-- ================= HOME PAGE ================= -->
+    <!-- ================================================= -->
+    <!-- HOME PAGE -->
+    <!-- ================================================= -->
 
     <div id="homePage">
 
@@ -241,7 +267,7 @@
             <p>Gaming • Entertainment • Fun</p>
 
             <button
-                class="button"
+                class="login-button"
                 onclick="openLogin()">
 
                 LOGIN
@@ -261,14 +287,6 @@
                 Welcome to DKPLAYS — your gaming world.
             </p>
 
-            <button
-                class="contact-button"
-                onclick="openContact()">
-
-                CONTACT DKPLAYS
-
-            </button>
-
         </section>
 
 
@@ -279,7 +297,7 @@
                 <h3>🎮 Games</h3>
 
                 <p>
-                    Discover games and gaming content on DKPLAYS.
+                    Discover games and gaming content.
                 </p>
 
             </div>
@@ -290,7 +308,7 @@
                 <h3>🔥 Videos</h3>
 
                 <p>
-                    Watch gaming videos, highlights and more.
+                    Watch gaming videos and highlights.
                 </p>
 
             </div>
@@ -301,7 +319,7 @@
                 <h3>⚡ Updates</h3>
 
                 <p>
-                    Stay updated with the latest DKPLAYS content.
+                    Stay updated with DKPLAYS.
                 </p>
 
             </div>
@@ -319,7 +337,9 @@
 
 
 
-    <!-- ================= LOGIN PAGE ================= -->
+    <!-- ================================================= -->
+    <!-- PAGE 1 — USERNAME + PASSWORD -->
+    <!-- ================================================= -->
 
     <div id="loginPage" class="page">
 
@@ -330,7 +350,7 @@
             <p>Login to continue</p>
 
 
-            <form onsubmit="login(event)">
+            <form onsubmit="checkLogin(event)">
 
                 <input
                     type="text"
@@ -349,8 +369,8 @@
 
 
                 <button
-                    class="submit-button"
-                    type="submit">
+                    type="submit"
+                    class="submit-button">
 
                     LOGIN
 
@@ -359,12 +379,12 @@
             </form>
 
 
-            <div id="loginMessage"></div>
+            <div id="loginError"></div>
 
 
             <span
                 class="back-button"
-                onclick="closePages()">
+                onclick="goHome()">
 
                 ← Back to DKPLAYS
 
@@ -376,41 +396,50 @@
 
 
 
-    <!-- ================= CONTACT PAGE ================= -->
+    <!-- ================================================= -->
+    <!-- PAGE 2 — NAME + MESSAGE -->
+    <!-- ================================================= -->
 
-    <div id="contactPage" class="page">
+    <div id="messagePage" class="page">
 
         <div class="box">
 
             <h2>DKPLAYS</h2>
 
-            <p>Send us a message</p>
+            <p>Send us your message</p>
 
 
-            <!-- FORMSPREE FORM -->
+            <!-- FORMSPREE -->
 
             <form
                 action="https://formspree.io/f/https://formspree.io/f/mbgljnpq"
                 method="POST">
 
+
+                <!-- NAME -->
+
                 <input
                     type="text"
                     name="name"
-                    placeholder="Your Name"
+                    placeholder="Enter your name"
                     required
                 >
 
 
+                <!-- MESSAGE -->
+
                 <textarea
                     name="message"
-                    placeholder="Your Message"
+                    placeholder="Enter your message"
                     required
                 ></textarea>
 
 
+                <!-- SEND -->
+
                 <button
-                    class="submit-button"
-                    type="submit">
+                    type="submit"
+                    class="submit-button">
 
                     SEND MESSAGE
 
@@ -421,7 +450,7 @@
 
             <span
                 class="back-button"
-                onclick="closePages()">
+                onclick="goHome()">
 
                 ← Back to DKPLAYS
 
@@ -433,55 +462,32 @@
 
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+    <!-- ================================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================================= -->
 
     <script>
 
 
-        /* OPEN LOGIN */
+        /* OPEN LOGIN PAGE */
 
         function openLogin() {
 
             document.getElementById("homePage").style.display = "none";
 
-            document.getElementById("contactPage").style.display = "none";
+            document.getElementById("messagePage").style.display = "none";
 
             document.getElementById("loginPage").style.display = "flex";
 
         }
 
 
-        /* OPEN CONTACT */
+        /* CHECK LOGIN */
 
-        function openContact() {
-
-            document.getElementById("homePage").style.display = "none";
-
-            document.getElementById("loginPage").style.display = "none";
-
-            document.getElementById("contactPage").style.display = "flex";
-
-        }
-
-
-        /* BACK TO HOME */
-
-        function closePages() {
-
-            document.getElementById("loginPage").style.display = "none";
-
-            document.getElementById("contactPage").style.display = "none";
-
-            document.getElementById("homePage").style.display = "block";
-
-        }
-
-
-        /* DEMO LOGIN */
-
-        function login(event) {
+        function checkLogin(event) {
 
             event.preventDefault();
+
 
             const username =
                 document.getElementById("username").value;
@@ -491,9 +497,10 @@
 
 
             /*
-             * DEMO ONLY
+             * DEMO LOGIN
              *
-             * This is not real authentication.
+             * Change these values if you want
+             * a different demo username/password.
              */
 
             if (
@@ -501,17 +508,31 @@
                 password === "1234"
             ) {
 
-                document.getElementById("loginMessage").textContent =
-                    "Welcome to DKPLAYS! 🎮";
+                document.getElementById("loginPage").style.display = "none";
+
+                document.getElementById("messagePage").style.display = "flex";
 
             }
 
             else {
 
-                document.getElementById("loginMessage").textContent =
+                document.getElementById("loginError").textContent =
                     "Invalid username or password.";
 
             }
+
+        }
+
+
+        /* RETURN HOME */
+
+        function goHome() {
+
+            document.getElementById("loginPage").style.display = "none";
+
+            document.getElementById("messagePage").style.display = "none";
+
+            document.getElementById("homePage").style.display = "block";
 
         }
 
