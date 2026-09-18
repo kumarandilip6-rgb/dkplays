@@ -42,9 +42,9 @@
             margin-top: 8px;
         }
 
-        /* LOGIN BUTTON */
+        /* BUTTON */
 
-        .login-button {
+        .button {
             margin-top: 20px;
             padding: 12px 30px;
             background: #00ff88;
@@ -55,7 +55,7 @@
             cursor: pointer;
         }
 
-        .login-button:hover {
+        .button:hover {
             background: #00cc6a;
         }
 
@@ -66,7 +66,7 @@
         }
 
         .hero h2 {
-            font-size: 55px;
+            font-size: 50px;
             margin-bottom: 20px;
         }
 
@@ -106,62 +106,77 @@
             line-height: 1.5;
         }
 
-        /* LOGIN PAGE */
+        /* LOGIN AND CONTACT PAGES */
 
-        #loginPage {
+        .page {
             display: none;
             min-height: 100vh;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
 
-        .login-box {
-            width: 350px;
+        .box {
+            width: 380px;
             padding: 40px;
             background: #15151c;
             border: 1px solid #333;
             border-radius: 12px;
         }
 
-        .login-box h2 {
+        .box h2 {
             color: #00ff88;
             font-size: 32px;
             letter-spacing: 3px;
             margin-bottom: 10px;
         }
 
-        .login-box p {
+        .box p {
             color: #888;
             margin-bottom: 25px;
         }
 
-        .login-box input {
+        input,
+        textarea {
             width: 100%;
             padding: 13px;
             margin-bottom: 15px;
+
             background: #0b0b0f;
             color: white;
+
             border: 1px solid #333;
             border-radius: 6px;
+
             outline: none;
+            font-size: 15px;
         }
 
-        .login-box input:focus {
+        textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
             border-color: #00ff88;
         }
 
-        .login-box button {
+        .submit-button {
             width: 100%;
             padding: 13px;
+
             background: #00ff88;
             color: #000;
+
             border: none;
             border-radius: 6px;
+
             font-weight: bold;
             cursor: pointer;
         }
 
-        .login-box button:hover {
+        .submit-button:hover {
             background: #00cc6a;
         }
 
@@ -172,9 +187,30 @@
             cursor: pointer;
         }
 
-        #message {
+        #loginMessage {
             margin-top: 15px;
             color: #aaa;
+        }
+
+        /* CONTACT BUTTON */
+
+        .contact-button {
+            margin-top: 20px;
+            padding: 12px 30px;
+
+            background: transparent;
+            color: #00ff88;
+
+            border: 1px solid #00ff88;
+            border-radius: 6px;
+
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contact-button:hover {
+            background: #00ff88;
+            color: #000;
         }
 
         /* FOOTER */
@@ -194,7 +230,7 @@
 <body>
 
 
-    <!-- HOME PAGE -->
+    <!-- ================= HOME PAGE ================= -->
 
     <div id="homePage">
 
@@ -205,7 +241,7 @@
             <p>Gaming • Entertainment • Fun</p>
 
             <button
-                class="login-button"
+                class="button"
                 onclick="openLogin()">
 
                 LOGIN
@@ -224,6 +260,14 @@
             <p>
                 Welcome to DKPLAYS — your gaming world.
             </p>
+
+            <button
+                class="contact-button"
+                onclick="openContact()">
+
+                CONTACT DKPLAYS
+
+            </button>
 
         </section>
 
@@ -275,11 +319,11 @@
 
 
 
-    <!-- LOGIN PAGE -->
+    <!-- ================= LOGIN PAGE ================= -->
 
-    <div id="loginPage">
+    <div id="loginPage" class="page">
 
-        <div class="login-box">
+        <div class="box">
 
             <h2>DKPLAYS</h2>
 
@@ -304,7 +348,9 @@
                 >
 
 
-                <button type="submit">
+                <button
+                    class="submit-button"
+                    type="submit">
 
                     LOGIN
 
@@ -313,12 +359,12 @@
             </form>
 
 
-            <div id="message"></div>
+            <div id="loginMessage"></div>
 
 
             <span
                 class="back-button"
-                onclick="closeLogin()">
+                onclick="closePages()">
 
                 ← Back to DKPLAYS
 
@@ -330,7 +376,67 @@
 
 
 
+    <!-- ================= CONTACT PAGE ================= -->
+
+    <div id="contactPage" class="page">
+
+        <div class="box">
+
+            <h2>DKPLAYS</h2>
+
+            <p>Send us a message</p>
+
+
+            <!-- FORMSPREE FORM -->
+
+            <form
+                action="https://formspree.io/f/https://formspree.io/f/mbgljnpq"
+                method="POST">
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+
+                <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    required
+                ></textarea>
+
+
+                <button
+                    class="submit-button"
+                    type="submit">
+
+                    SEND MESSAGE
+
+                </button>
+
+            </form>
+
+
+            <span
+                class="back-button"
+                onclick="closePages()">
+
+                ← Back to DKPLAYS
+
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
     <script>
+
 
         /* OPEN LOGIN */
 
@@ -338,23 +444,40 @@
 
             document.getElementById("homePage").style.display = "none";
 
+            document.getElementById("contactPage").style.display = "none";
+
             document.getElementById("loginPage").style.display = "flex";
 
         }
 
 
-        /* CLOSE LOGIN */
+        /* OPEN CONTACT */
 
-        function closeLogin() {
+        function openContact() {
+
+            document.getElementById("homePage").style.display = "none";
 
             document.getElementById("loginPage").style.display = "none";
+
+            document.getElementById("contactPage").style.display = "flex";
+
+        }
+
+
+        /* BACK TO HOME */
+
+        function closePages() {
+
+            document.getElementById("loginPage").style.display = "none";
+
+            document.getElementById("contactPage").style.display = "none";
 
             document.getElementById("homePage").style.display = "block";
 
         }
 
 
-        /* LOGIN */
+        /* DEMO LOGIN */
 
         function login(event) {
 
@@ -367,21 +490,25 @@
                 document.getElementById("password").value;
 
 
-            /* DEMO LOGIN */
+            /*
+             * DEMO ONLY
+             *
+             * This is not real authentication.
+             */
 
             if (
                 username === "admin" &&
                 password === "1234"
             ) {
 
-                document.getElementById("message").textContent =
+                document.getElementById("loginMessage").textContent =
                     "Welcome to DKPLAYS! 🎮";
 
             }
 
             else {
 
-                document.getElementById("message").textContent =
+                document.getElementById("loginMessage").textContent =
                     "Invalid username or password.";
 
             }
